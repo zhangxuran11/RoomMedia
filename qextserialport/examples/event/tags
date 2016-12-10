@@ -1,0 +1,78 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR            = ar cqs$/;"	m
+CC	Makefile	/^CC            = gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+CHK_DIR_EXISTS	Makefile	/^CHK_DIR_EXISTS= test -d$/;"	m
+COMPRESS	Makefile	/^COMPRESS      = gzip -9f$/;"	m
+COPY	Makefile	/^COPY          = cp -f$/;"	m
+COPY_DIR	Makefile	/^COPY_DIR      = $(COPY) -r$/;"	m
+COPY_FILE	Makefile	/^COPY_FILE     = $(COPY)$/;"	m
+CXX	Makefile	/^CXX           = g++$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES)$/;"	m
+DEFINES	Makefile	/^DEFINES       = -DQT_WEBKIT -DQESP_NO_UDEV -D__linux__ -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED$/;"	m
+DEL_DIR	Makefile	/^DEL_DIR       = rmdir$/;"	m
+DEL_FILE	Makefile	/^DEL_FILE      = rm -f$/;"	m
+DESTDIR	Makefile	/^DESTDIR       = $/;"	m
+DIST	Makefile	/^DIST          = \/usr\/share\/qt4\/mkspecs\/common\/unix.conf \\$/;"	m
+INCPATH	Makefile	/^INCPATH       = -I\/usr\/share\/qt4\/mkspecs\/linux-g++ -I. -I\/usr\/include\/qt4\/QtCore -I\/usr\/include\/qt4\/QtGui -I\/usr\/include\/qt4 -I..\/..\/src -I.$/;"	m
+INSTALL_DIR	Makefile	/^INSTALL_DIR   = $(COPY_DIR)$/;"	m
+INSTALL_FILE	Makefile	/^INSTALL_FILE  = install -m 644 -p$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = install -m 755 -p$/;"	m
+LFLAGS	Makefile	/^LFLAGS        = -Wl,-O1$/;"	m
+LIBS	Makefile	/^LIBS          = $(SUBLIBS)  -L\/usr\/lib\/i386-linux-gnu -lQtGui -lQtCore -lpthread $/;"	m
+LINK	Makefile	/^LINK          = g++$/;"	m
+MKDIR	Makefile	/^MKDIR         = mkdir -p$/;"	m
+MOVE	Makefile	/^MOVE          = mv -f$/;"	m
+OBJECTS	Makefile	/^OBJECTS       = qextserialport.o \\$/;"	m
+OBJECTS_DIR	Makefile	/^OBJECTS_DIR   = .\/$/;"	m
+PORTLISTENER_H_	PortListener.h	5;"	d
+PortListener	PortListener.cpp	/^PortListener::PortListener(const QString &portName)$/;"	f	class:PortListener
+PortListener	PortListener.h	/^class PortListener : public QObject$/;"	c
+QMAKE	Makefile	/^QMAKE         = \/usr\/bin\/qmake$/;"	m
+QMAKE_TARGET	Makefile	/^QMAKE_TARGET  = event$/;"	m
+RANLIB	Makefile	/^RANLIB        = $/;"	m
+SED	Makefile	/^SED           = sed$/;"	m
+SOURCES	Makefile	/^SOURCES       = ..\/..\/src\/qextserialport.cpp \\$/;"	m
+STRIP	Makefile	/^STRIP         = strip$/;"	m
+SYMLINK	Makefile	/^SYMLINK       = ln -f -s$/;"	m
+TAR	Makefile	/^TAR           = tar -cf$/;"	m
+TARGET	Makefile	/^TARGET        = event$/;"	m
+deviceDiscovered	moc_qextserialenumerator.cpp	/^void QextSerialEnumerator::deviceDiscovered(const QextPortInfo & _t1)$/;"	f	class:QextSerialEnumerator
+deviceRemoved	moc_qextserialenumerator.cpp	/^void QextSerialEnumerator::deviceRemoved(const QextPortInfo & _t1)$/;"	f	class:QextSerialEnumerator
+dsrChanged	moc_qextserialport.cpp	/^void QextSerialPort::dsrChanged(bool _t1)$/;"	f	class:QextSerialPort
+getStaticMetaObject	moc_PortListener.cpp	/^const QMetaObject &PortListener::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:PortListener
+getStaticMetaObject	moc_qextserialenumerator.cpp	/^const QMetaObject &QextSerialEnumerator::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:QextSerialEnumerator
+getStaticMetaObject	moc_qextserialport.cpp	/^const QMetaObject &QextSerialPort::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:QextSerialPort
+main	main.cpp	/^int main(int argc, char *argv[])$/;"	f
+metaObject	moc_PortListener.cpp	/^const QMetaObject *PortListener::metaObject() const$/;"	f	class:PortListener
+metaObject	moc_qextserialenumerator.cpp	/^const QMetaObject *QextSerialEnumerator::metaObject() const$/;"	f	class:QextSerialEnumerator
+metaObject	moc_qextserialport.cpp	/^const QMetaObject *QextSerialPort::metaObject() const$/;"	f	class:QextSerialPort
+onDsrChanged	PortListener.cpp	/^void PortListener::onDsrChanged(bool status)$/;"	f	class:PortListener
+onReadyRead	PortListener.cpp	/^void PortListener::onReadyRead()$/;"	f	class:PortListener
+port	PortListener.h	/^    QextSerialPort *port;$/;"	m	class:PortListener
+qt_meta_data_PortListener	moc_PortListener.cpp	/^static const uint qt_meta_data_PortListener[] = {$/;"	v	file:
+qt_meta_data_QextSerialEnumerator	moc_qextserialenumerator.cpp	/^static const uint qt_meta_data_QextSerialEnumerator[] = {$/;"	v	file:
+qt_meta_data_QextSerialPort	moc_qextserialport.cpp	/^static const uint qt_meta_data_QextSerialPort[] = {$/;"	v	file:
+qt_meta_stringdata_PortListener	moc_PortListener.cpp	/^static const char qt_meta_stringdata_PortListener[] = {$/;"	v	file:
+qt_meta_stringdata_QextSerialEnumerator	moc_qextserialenumerator.cpp	/^static const char qt_meta_stringdata_QextSerialEnumerator[] = {$/;"	v	file:
+qt_meta_stringdata_QextSerialPort	moc_qextserialport.cpp	/^static const char qt_meta_stringdata_QextSerialPort[] = {$/;"	v	file:
+qt_metacall	moc_PortListener.cpp	/^int PortListener::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:PortListener
+qt_metacall	moc_qextserialenumerator.cpp	/^int QextSerialEnumerator::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:QextSerialEnumerator
+qt_metacall	moc_qextserialport.cpp	/^int QextSerialPort::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:QextSerialPort
+qt_metacast	moc_PortListener.cpp	/^void *PortListener::qt_metacast(const char *_clname)$/;"	f	class:PortListener
+qt_metacast	moc_qextserialenumerator.cpp	/^void *QextSerialEnumerator::qt_metacast(const char *_clname)$/;"	f	class:QextSerialEnumerator
+qt_metacast	moc_qextserialport.cpp	/^void *QextSerialPort::qt_metacast(const char *_clname)$/;"	f	class:QextSerialPort
+qt_static_metacall	moc_PortListener.cpp	/^void PortListener::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:PortListener
+qt_static_metacall	moc_qextserialenumerator.cpp	/^void QextSerialEnumerator::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:QextSerialEnumerator
+qt_static_metacall	moc_qextserialport.cpp	/^void QextSerialPort::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:QextSerialPort
+staticMetaObject	moc_PortListener.cpp	/^const QMetaObject PortListener::staticMetaObject = {$/;"	m	class:PortListener	file:
+staticMetaObject	moc_qextserialenumerator.cpp	/^const QMetaObject QextSerialEnumerator::staticMetaObject = {$/;"	m	class:QextSerialEnumerator	file:
+staticMetaObject	moc_qextserialport.cpp	/^const QMetaObject QextSerialPort::staticMetaObject = {$/;"	m	class:QextSerialPort	file:
+staticMetaObjectExtraData	moc_PortListener.cpp	/^const QMetaObjectExtraData PortListener::staticMetaObjectExtraData = {$/;"	m	class:PortListener	file:
+staticMetaObjectExtraData	moc_qextserialenumerator.cpp	/^const QMetaObjectExtraData QextSerialEnumerator::staticMetaObjectExtraData = {$/;"	m	class:QextSerialEnumerator	file:
+staticMetaObjectExtraData	moc_qextserialport.cpp	/^const QMetaObjectExtraData QextSerialPort::staticMetaObjectExtraData = {$/;"	m	class:QextSerialPort	file:

@@ -1,0 +1,111 @@
+#TrainLinePanel,#Dialog,#MainWindow{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(67, 246, 112, 224), stop:0.29902 rgba(147, 228, 240, 254), stop:0.5 rgba(203, 242, 248, 247), stop:0.573529 rgba(255, 255, 255, 240), stop:0.627451 rgba(208, 248, 255, 243), stop:1 rgba(21, 193, 226, 255));
+}
+QProgressBar {
+     border: 2px solid grey;
+     border-radius: 5px;
+    text-align: right;
+    margin-right: 4ex;
+ }
+
+ QProgressBar::chunk{
+ background: red;
+ }
+ QTableWidget{
+    font: 900 14pt "Ubuntu";
+    color: rgb(0, 0, 0);
+    border-style:solid;
+    border-color: rgb(170, 170, 255);
+    border-width:2px;
+    background-color: rgb(147, 255, 237);
+    border-image: url(:/nothing);
+    alternate-background-color: rgb(170, 255, 255);
+
+}
+
+QTableWidget QHeaderView::section {
+    font: 300 14pt "Ubuntu";
+    color: black;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+    background-color: qlineargradient(spread:repeat, x1:0.468, y1:0, x2:0.463, y2:1, stop:0 rgba(29, 151, 179, 255), stop:0.458128 rgba(177, 241, 255, 255), stop:1 rgba(23, 172, 209, 255)) ;
+}
+QScrollBar::sub-line:horizontal {
+                width:20px;
+      background-color: rgb(186, 186, 186);
+      height: 20px;
+border-bottom-left-radius:10px;
+border-top-left-radius:10px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal {
+    width:20px;
+    background-color:rgb(186, 186, 186);
+height: 20px;
+border-bottom-right-radius:10px;
+border-top-right-radius:10px;
+    subcontrol-position:right;
+        subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+                width:20px;
+      background-color: rgb(186, 186, 186);
+      height: 20px;
+                border-top-left-radius:10px;
+                border-top-right-radius:10px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+
+}
+QScrollBar::add-line:vertical {
+    width:20px;
+    background:rgb(186, 186, 186);
+height: 20px;
+border-bottom-left-radius:10px;
+border-bottom-right-radius:10px;
+    subcontrol-position:bottom;
+        subcontrol-origin: margin;
+}
+QScrollBar::up-arrow,QScrollBar::down-arrow ,QScrollBar::left-arrow ,QScrollBar::right-arrow  {
+    height:13px;
+    width:13px;
+}
+QScrollBar::up-arrow{
+        image: url(:/res/top.png);
+}
+QScrollBar::down-arrow{
+        image: url(:/res/bottom.png);
+}
+QScrollBar::left-arrow{
+        image: url(:/res/left.png);
+}
+QScrollBar::right-arrow{
+        image: url(:/res/right.png);
+}
+
+QScrollBar::add-page,QScrollBar::sub-page {
+        background-color: rgb(186, 186, 186);
+
+}
+
+
+QScrollBar::handle:vertical,QScrollBar::handle:horizontal{
+        background-color: qlineargradient(spread:repeat, x1:0.468, y1:0, x2:0.463, y2:1, stop:0 rgba(177, 241, 255, 255), stop:0.325123 rgba(157, 238, 255, 255), stop:1 rgba(108, 191, 212, 255));
+        border-radius:0px;
+        min-height:40px;
+}
+
+QScrollBar:vertical  {
+                background-color: rgb(186, 186, 186);
+    width: 20px;
+margin-top:20px;
+margin-bottom:20px;
+}
+QScrollBar:horizontal {
+background-color:rgb(186, 186, 186);
+        height:20px;
+margin-left:20px;
+margin-right:20px;
+}
+
