@@ -6,6 +6,7 @@
 #include<unistd.h>
 #include<QNetworkInterface>
 #include<QStringList>
+#include <QMutex>
 ZTools::ZTools()
 {
 }
@@ -59,9 +60,33 @@ int ZTools::getCarID_bk()
     }
     return 0;
 }
+int ZTools::getCarGlobalID()
+{
+    QList<QHostAddress> list = QNetworkInterface::allAddresses();
+    foreach(QHostAddress address,list)
+    {
+        QString ip = address.toString();
+        if(ip.startsWith("192.168."))
+        {
+            return ip.split(QChar('.'))[2].toInt();
+        }
+    }
+    return 0;
+}
+static QMutex carIDMutex;
+void ZTools::setCarID(int carID)
+{
+    char buff[100];
+    sprintf(buff,"echo 192.168.%d.10 > /etc/myip.txt",carID);
+    carIDMutex.lock();
+    system(buff);
+    carIDMutex.unlock();
+}
 int ZTools::getCarID()
 {
+    carIDMutex.lock();
     QString ip = readLineFromFile("/etc/myip.txt",1);
+    carIDMutex.unlock();
     if(ip.startsWith("192.168."))
     {
         return ip.split(QChar('.'))[2].toInt();

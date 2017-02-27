@@ -108,30 +108,30 @@ void StackPanel::loadTimeTable(int train_id)
 {
     tableWidget->clear();
     tableWidget->setRowCount(0);
-    tableWidget->setColumnCount(4);
-    QTableWidgetItem* item = new QTableWidgetItem(translator->tr("Station number"));
+    tableWidget->setColumnCount(3);
+//    QTableWidgetItem* item = new QTableWidgetItem(translator->tr("Station number"));
+//    item->setFlags(Qt::NoItemFlags);
+//    item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+//    item->setSizeHint(QSize(200,40));
+//    tableWidget->setHorizontalHeaderItem(0,item);
+
+    QTableWidgetItem*item = new QTableWidgetItem(translator->tr("Station name"));
     item->setFlags(Qt::NoItemFlags);
     item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
     item->setSizeHint(QSize(200,40));
     tableWidget->setHorizontalHeaderItem(0,item);
 
-    item = new QTableWidgetItem(translator->tr("Station name"));
+    item = new QTableWidgetItem(translator->tr("Arrival time"));
     item->setFlags(Qt::NoItemFlags);
     item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
     item->setSizeHint(QSize(200,40));
     tableWidget->setHorizontalHeaderItem(1,item);
 
-    item = new QTableWidgetItem(translator->tr("Arrival time"));
-    item->setFlags(Qt::NoItemFlags);
-    item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-    item->setSizeHint(QSize(200,40));
-    tableWidget->setHorizontalHeaderItem(2,item);
-
     item = new QTableWidgetItem(translator->tr("Strat time"));
     item->setFlags(Qt::NoItemFlags);
     item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
     item->setSizeHint(QSize(200,40));
-    tableWidget->setHorizontalHeaderItem(3,item);
+    tableWidget->setHorizontalHeaderItem(2,item);
 
     int index = mapPanel->cur_index - 8;
     if(index < 1)
@@ -144,12 +144,13 @@ void StackPanel::loadTimeTable(int train_id)
         bool flag = false;
         if( i == mapPanel->cur_index - index)
             flag = true;
-        QTableWidgetItem* item = new QTableWidgetItem(rowSet[i].getPara("indexNu"));
-        if(flag)
-            item->setTextColor(Qt::red);
-        item->setFlags(Qt::NoItemFlags);
-        item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        tableWidget->setItem(i,0,item);
+        QTableWidgetItem* item = NULL;
+//        QTableWidgetItem* item = new QTableWidgetItem(rowSet[i].getPara("indexNu"));
+//        if(flag)
+//            item->setTextColor(Qt::red);
+//        item->setFlags(Qt::NoItemFlags);
+//        item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+//        tableWidget->setItem(i,0,item);
         if(translator->curLan == "En")
             item = new QTableWidgetItem(rowSet[i].getPara("station_name_en"));
         else
@@ -158,7 +159,7 @@ void StackPanel::loadTimeTable(int train_id)
             item->setTextColor(Qt::red);
         item->setFlags(Qt::NoItemFlags);
         item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        tableWidget->setItem(i,1,item);
+        tableWidget->setItem(i,0,item);
         QString str = rowSet[i].getPara("arrive_time");
         QTime t = QTime::fromString(str,"hh:mm");
         if(t.isValid())
@@ -171,7 +172,7 @@ void StackPanel::loadTimeTable(int train_id)
             item->setTextColor(Qt::red);
         item->setFlags(Qt::NoItemFlags);
         item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        tableWidget->setItem(i,2,item);
+        tableWidget->setItem(i,1,item);
         str = rowSet[i].getPara("start_time");
         t = QTime::fromString(str,"hh:mm");
         if(t.isValid())
@@ -184,10 +185,8 @@ void StackPanel::loadTimeTable(int train_id)
             item->setTextColor(Qt::red);
         item->setFlags(Qt::NoItemFlags);
         item->setTextAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
-        tableWidget->setItem(i,3,item);
-
+        tableWidget->setItem(i,2,item);
     }
-
 }
 StackPanel::~StackPanel()
 {

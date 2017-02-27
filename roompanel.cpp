@@ -252,7 +252,7 @@ void RoomPanel::on_readyRead_temp()
         //{
             ZTPprotocol ztp;
             ztp.addPara("T","Temperature");
-            ztp.addPara("CAR_ID",QString::number(GlobalInfo::getInstance()->carId));
+            ztp.addPara("CAR_ID",QString::number(ZTools::getCarID()));
             ztp.addPara("ROOM_NR",QString::number(GlobalInfo::getInstance()->roomNr));
             ztp.addPara("value",QString::number(temp_in_door));
             glb->comZtpManager->SendOneZtp(ztp,QHostAddress(BROADCAST_IP),8314);

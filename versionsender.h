@@ -9,13 +9,12 @@ class VersionSender : public QObject
     const int MajorVersion;
     const int MinorVersion;
     const int MicroVersion;
-    int carNo;
     bool online;
     bool testOffline;
 public:
     void setTestOffline(){testOffline = true;}
     void setOnline(bool f){online = f;}
-    VersionSender(QString devName,int majorVersion,int minorVersion,int microVersion,int _carNo);
+    VersionSender(QString devName,int majorVersion,int minorVersion,int microVersion);
 private slots  :
     void OnSendVersion();
 };

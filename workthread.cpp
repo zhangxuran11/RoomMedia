@@ -38,16 +38,30 @@ void WorkThread::tempTimeOutProc()
         return;
     else if(timer == tempTimer)
     {
-        GlobalInfo::getInstance()->playerGui->ui->innerTempLabel->setText("00");
+        GlobalInfo::getInstance()->playerGui->ui->innerTempLabel->setText("25");
     }
     else if(timer == outTempTimer)
     {
         CQplayerGUI* gui = GlobalInfo::getInstance()->playerGui;
-        gui->ui->outTempLabel->setText(QString("00"));
+        gui->ui->outTempLabel->setText(QString("33"));
+    }
+}
+void WorkThread::slot_recv_car_id_map()
+{
+    ZTPprotocol ztp;
+    recv_car_id_map_ztpm->getOneZtp(ztp);
+    if(ztp.getPara("T") == "CAR_ID_MAP" && ztp.getPara("GLOBAL_ID").toInt() == ZTools::getCarGlobalID() )
+    {
+        if(ztp.getPara("CAR_ID").toInt() !=ZTools::getCarID())
+        {
+            ZTools::setCarID(ztp.getPara("CAR_ID").toInt());
+        }
     }
 }
 void WorkThread::run()
 {
+    recv_car_id_map_ztpm = new ZTPManager(8323,QHostAddress("224.102.228.40"));
+    connect(recv_car_id_map_ztpm,SIGNAL(readyRead()),this,SLOT(slot_recv_car_id_map()));
 
     recvCarrierHeartTimer = new QTimer;
     recvCarrierHeartTimer->setInterval(10000);
@@ -96,7 +110,7 @@ void WorkThread::broadcastProc()
     if(ztpm == NULL)
         return;
     ztpm->getOneZtp(ztp);
-    if(ztp.getPara("T") == "Temperature" && ztp.getPara("CAR_ID").toInt() == GlobalInfo::getInstance()->carId && ztp.getPara("ROOM_NR").toInt() == GlobalInfo::getInstance()->roomNr)
+    if(ztp.getPara("T") == "Temperature" && ztp.getPara("CAR_ID").toInt() == ZTools::getCarID() && ztp.getPara("ROOM_NR").toInt() == GlobalInfo::getInstance()->roomNr)
     {
 //        ztp.print();
         tempTimer->start(5000);
@@ -262,7 +276,7 @@ void WorkThread::broadcastProc()
         bool broadSignal = false;
         if(ztp.getPara("HasBroadcast") == "Y" ||
                 (ztp.getPara("HasBroadcast_lc") == "Y" &&
-                 ztp.getPara("CarId").toInt() == GlobalInfo::getInstance()->carId ))
+                 ztp.getPara("CarId").toInt() == ZTools::getCarID() ))
         {
            broadSignal = true;
         }

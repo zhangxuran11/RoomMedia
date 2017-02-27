@@ -60,7 +60,7 @@ CQplayerGUI::CQplayerGUI(QWidget *parent) :
     disableTimer.setSingleShot(true);
     disableTimer.setInterval(3000);
     connect(&disableTimer,SIGNAL(timeout()),this,SLOT(slot_disableTime()));
-    versionCtrl = new VersionSender("RoomMedia",1,1,12,ZTools::getCarID());
+    versionCtrl = new VersionSender("RoomMedia",1,1,12);
 
     ztpmForTest = new ZTPManager(8319,QHostAddress("224.102.228.40"));
     connect(ztpmForTest,SIGNAL(readyRead()),this,SLOT(slot_procTestZtp()));
@@ -75,9 +75,7 @@ CQplayerGUI::CQplayerGUI(QWidget *parent) :
     connect(timer,SIGNAL(timeout()),this,SLOT(sendHeart()));
     ui->setupUi(this);
 
-    char buf[10];
-    sprintf(buf,"%02d",ZTools::getCarID());
-    ui->carIDLabel->setText(buf);
+
 
     btn[0] = ui->btn_ch0;
     btn[1] = ui->btn_ch1;
@@ -519,6 +517,9 @@ void CQplayerGUI::refresh()
     ui->_preStationLabel->setText(translator->tr("Previous station"));
     ui->_nextStationLabel->setText(translator->tr("Next station"));
     ui->_carIDLabel->setText(translator->tr("CAR NO"));
+    char buf[10];
+    sprintf(buf,"%02d",ZTools::getCarID());
+    ui->carIDLabel->setText(buf);
     ui->_trainIDLabel->setText(translator->tr("Train No"));
     ui->_curStationLabel->setText(translator->tr("This Station"));
     ui->_arriveTimeLabel->setText(translator->tr("Destination station time"));

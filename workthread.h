@@ -7,6 +7,7 @@
 class WorkThread : public QThread
 {
     Q_OBJECT
+    ZTPManager* recv_car_id_map_ztpm;
     static WorkThread* _instance;
     ZTPManager* ztpmCh;
     ZTPManager* ztpmCarrierHeart;
@@ -36,6 +37,7 @@ private slots:
     void recvCarrierHeartTimeout();
 
     void slot_channel_proc();
+    void slot_recv_car_id_map();
 };
 
 #endif // WORKTHREAD_H
